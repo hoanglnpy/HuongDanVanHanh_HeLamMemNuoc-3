@@ -1,0 +1,198 @@
+import React, { useEffect } from 'react';
+import { Mail, Phone, Calendar, Clock, MapPin, User, ChevronRight, CheckCircle } from 'lucide-react';
+
+const VTNetTrainingLanding = () => {
+  return (
+    <div className="min-h-screen bg-[#F5F5F5] font-sans text-[#4A4A4A] overflow-x-hidden">
+      {/* SECTION 1: NAVIGATION */}
+      <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <div className="text-[#E30613] font-bold text-2xl tracking-tighter" style={{ fontFamily: 'Arial Black' }}>
+              VIETTEL <span className="text-[#0A0A0A]">NETWORKS</span>
+            </div>
+          </div>
+          <div className="hidden md:flex space-x-8 font-medium">
+            <a href="#goals" className="hover:text-[#E30613] transition-colors">Mục tiêu</a>
+            <a href="#content" className="hover:text-[#E30613] transition-colors">Nội dung</a>
+            <a href="#instructor" className="hover:text-[#E30613] transition-colors">Giảng viên</a>
+          </div>
+          <button className="bg-[#E30613] hover:bg-[#B30000] text-white px-6 py-2.5 rounded-sm font-bold transition-all transform hover:scale-105 active:scale-95">
+            ĐĂNG KÝ NGAY
+          </button>
+        </div>
+      </nav>
+
+      {/* SECTION 2: HERO SECTION */}
+      <header className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-[#0A0A0A] text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute transform -rotate-12 bg-gradient-to-r from-[#E30613] to-transparent w-full h-full -top-1/2 -left-1/4"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6 animate-fade-in-up">
+            <span className="inline-block px-4 py-1 bg-[#E30613] text-xs font-bold tracking-widest uppercase">
+              Chương trình đào tạo nội bộ
+            </span>
+            <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
+              Hướng Dẫn Vận Hành <br />
+              <span className="text-[#E30613]">Hệ Làm Mềm Nước</span>
+            </h1>
+            <p className="text-xl text-gray-300 max-w-lg">
+              Nắm vững kỹ thuật vận hành và bảo trì để duy trì hệ thống Chiller hoạt động ổn định và bền bỉ.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <button className="bg-[#E30613] hover:bg-[#B30000] text-white px-10 py-4 font-bold text-lg transition-all">
+                ĐĂNG KÝ NGAY
+              </button>
+              <button className="border border-white hover:bg-white hover:text-black px-10 py-4 font-bold text-lg transition-all">
+                XEM CHI TIẾT
+              </button>
+            </div>
+          </div>
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#E30613] to-red-900 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div className="relative aspect-video bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700">
+              <p className="text-gray-500 italic">[Ảnh thực tế hệ thống làm mềm nước tại trạm]</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* SECTION 3: CORE BENEFITS */}
+      <section id="goals" className="py-24 max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#0A0A0A] mb-4">Bạn sẽ học được gì?</h2>
+          <div className="w-20 h-1 bg-[#E30613] mx-auto"></div>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            { title: "Nguyên lý hệ thống", desc: "Hiểu rõ nguyên lý hoạt động và chức năng của Hệ làm mềm nước." },
+            { title: "Kỹ năng vận hành", desc: "Thực hiện thành thạo vận hành hàng ngày và bảo dưỡng định kỳ." },
+            { title: "Xử lý sự cố", desc: "Chủ động nhận diện lỗi, khoanh vùng nguyên nhân và xử lý." },
+            { title: "An toàn lao động", desc: "Áp dụng đúng các biện pháp an toàn lao động và an toàn điện." }
+          ].map((item, idx) => (
+            <div key={idx} className="bg-white p-8 border-b-4 border-[#E30613] shadow-sm hover:shadow-xl transition-all hover:-translate-y-2 group">
+              <div className="w-12 h-12 bg-[#F5F5F5] group-hover:bg-[#E30613] group-hover:text-white transition-colors flex items-center justify-center mb-6">
+                <CheckCircle size={24} />
+              </div>
+              <h3 className="font-bold text-xl mb-3 text-[#0A0A0A]">{item.title}</h3>
+              <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 4 & 5: INFO & CONTENT MIXED */}
+      <section className="bg-[#0A0A0A] text-white py-24">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-16">
+          <div className="lg:col-span-1 space-y-8">
+            <h2 className="text-3xl font-bold border-l-4 border-[#E30613] pl-6">Thông tin khóa học</h2>
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <Calendar className="text-[#E30613] mt-1" />
+                <div>
+                  <p className="text-sm text-gray-400">Ngày học</p>
+                  <p className="text-lg font-bold">Thứ 6, 22/05/2026</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <Clock className="text-[#E30613] mt-1" />
+                <div>
+                  <p className="text-sm text-gray-400">Thời gian</p>
+                  <p className="text-lg font-bold">8:30 – 12:00 (3,5 giờ)</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <MapPin className="text-[#E30613] mt-1" />
+                <div>
+                  <p className="text-sm text-gray-400">Địa điểm & Hình thức</p>
+                  <p className="text-lg font-bold">Tầng 5, Tòa nhà NTH3</p>
+                  <p className="text-sm">Blended Learning (Trực tiếp & Zoom)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="content" className="lg:col-span-2 space-y-8">
+            <h2 className="text-3xl font-bold border-l-4 border-[#E30613] pl-6">Nội dung đào tạo chi tiết</h2>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {[
+                { step: "01", title: "Giới thiệu", desc: "Tổng quan thiết bị & chức năng" },
+                { step: "02", title: "Chuẩn bị", desc: "Tiêu chuẩn vận hành & chuẩn bị muối" },
+                { step: "03", title: "Cài đặt", desc: "Thiết lập bộ điều khiển CLACK 1.5" },
+                { step: "04", title: "Vận hành", desc: "Thực hành chế độ Auto/Man/Off" },
+                { step: "05", title: "Sơ đồ", desc: "Nhận diện trạng thái Bypass/Normal" },
+                { step: "06", title: "Bảo trì", desc: "Xử lý lỗi & lịch bảo dưỡng" },
+              ].map((item, idx) => (
+                <div key={idx} className="flex space-x-4 p-4 rounded bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+                  <span className="text-[#E30613] font-black text-2xl italic">{item.step}</span>
+                  <div>
+                    <h4 className="font-bold">{item.title}</h4>
+                    <p className="text-sm text-gray-400">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6 & 7: INSTRUCTOR & BENEFITS */}
+      <section id="instructor" className="py-24 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+        <div className="bg-white p-12 shadow-2xl flex flex-col md:flex-row items-center gap-8">
+          <div className="w-32 h-32 bg-gray-200 rounded-full flex-shrink-0 flex items-center justify-center">
+            <User size={64} className="text-gray-400" />
+          </div>
+          <div>
+            <span className="text-[#E30613] font-bold text-sm tracking-widest uppercase">Giảng viên</span>
+            <h3 className="text-3xl font-extrabold text-[#0A0A0A] mt-1">Đ/c Lê Nguyên Hoàng</h3>
+            <p className="text-gray-600 mt-2">Phòng Cơ điện – Trung tâm Kỹ thuật Khu vực 2, VTNet</p>
+          </div>
+        </div>
+        <div className="space-y-6">
+          <h2 className="text-3xl font-bold text-[#0A0A0A]">Yêu cầu & Quyền lợi</h2>
+          <ul className="space-y-4">
+            <li className="flex items-center space-x-3 italic bg-gray-100 p-3 rounded">
+              <ChevronRight className="text-[#E30613]" />
+              <span>Tiêu chí: Tham gia đầy đủ + Bài test đạt ≥ 7/10 điểm.</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <ChevronRight className="text-[#E30613]" />
+              <span>Nhận chứng nhận hoàn thành nội bộ & tài liệu hướng dẫn.</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <ChevronRight className="text-[#E30613]" />
+              <span className="font-bold text-[#E30613]">+1 điểm thưởng cho học viên tích cực thảo luận.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* SECTION 8: FINAL CTA & FOOTER */}
+      <footer className="bg-[#0A0A0A] text-white pt-20 pb-10">
+        <div className="max-w-4xl mx-auto text-center px-6 mb-20">
+          <h2 className="text-4xl font-bold mb-6">Sẵn sàng làm chủ hệ thống vận hành?</h2>
+          <p className="text-xl text-[#E30613] font-bold mb-8 italic italic">Hạn đăng ký: Trước ngày 20/05/2026</p>
+          <button className="bg-[#E30613] hover:bg-[#B30000] text-white px-12 py-5 font-bold text-xl rounded-sm transition-all transform hover:scale-105 active:scale-95 shadow-xl">
+            ĐĂNG KÝ THAM GIA NGAY
+          </button>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-6 pt-10 border-t border-white/10 grid md:grid-cols-2 gap-8 text-sm text-gray-400">
+          <div>
+            <p className="font-bold text-white mb-4 uppercase tracking-widest">Thông tin liên hệ</p>
+            <p className="flex items-center mb-2"><User size={14} className="mr-2 text-[#E30613]"/> Lê Nguyên Hoàng (Phòng Cơ điện, TT KTKV2, VTNet)</p>
+            <p className="flex items-center mb-2"><Phone size={14} className="mr-2 text-[#E30613]"/> 0985 000 279</p>
+            <p className="flex items-center mb-2"><Mail size={14} className="mr-2 text-[#E30613]"/> hoangln@viettel.com.vn</p>
+          </div>
+          <div className="md:text-right flex flex-col justify-end">
+            <p className="text-lg font-black text-white mb-2 italic">VIETTEL NETWORKS</p>
+            <p>© 2026 Viettel Network Corporation. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default VTNetTrainingLanding;
